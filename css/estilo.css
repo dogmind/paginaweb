@@ -14,7 +14,7 @@ GLOBAL
 	user-select: none;	
 }
 
-.contenedor{
+#contenedor{
 	position:relative;
 	margin:auto;
 	width:100%;
@@ -75,45 +75,105 @@ h1.titulos hr{
 CABECERA
 =============================================*/
 
-#cabecera{
-	/*position: absolute;*/
-	max-height: 150px;
+header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
 	width: 100%;
 	background: rgb(26,103,61);
-	overflow: hidden;
+	transition: 1s;
+	box-sizing: border-box;
+	z-index: 10;
 }
 
-#cabecera figure img{
-	position: relative;	
-	max-height: 150px;
+header.scrolled{
+	height: 100px;
 }
 
-#cabecera #fotosCab{
-	float: right;
-	max-width: 200px;
+header	img.banner{
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	transition: 1s;
 }
+
+header.scrolled img.banner{
+	opacity: 0;
+}
+
+header .logo{
+	position: absolute;
+	top: calc(50% - 150px);
+	left: calc(50% - 150px);
+	transition: 1s;
+}
+
+header.scrolled .logo{
+	position: relative;
+	top: 10px;
+	left: 0;
+}
+
+header .logo img{
+	width: 300px;
+	transition: 1s;
+}
+
+header.scrolled .logo img{
+	width: 80px;
+
+}
+
 
 /*=============================================
 MENU
 =============================================*/
 
 nav{
+	position: relative;
+	float: right;
+	margin-right: 10px;
+}
+
+header.scrolled nav{
 	background: rgb(26,103,61);
 }
 
+nav ul{
+	margin: 0;
+	padding: 30px 0;
+	display: flex;
+	transition: 1s;
+	opacity: 0;
+	visibility: hidden;
+	transform: 	translateX(0);
+}
+
+header.scrolled nav ul{
+	opacity: 1;
+	visibility: visible;
+	transform: translateX(0);
+}
+
 nav ul li{
-	padding:10px;
+	list-style: none;
 	text-align:center;
 }
 
 nav ul li a{
-	display: block;
-	margin: auto;
+	/*display: block;*/
+	/*margin: auto;*/
 	/*margin-bottom: 5px;*/
+	padding: 10px 15px;
 	font-family: 'Lemon', cursive;
 	color: white;
 	line-height: 30px;
 	font-size: 20px;
+	transition: 1s;
 }
 
 nav ul li a:hover{
@@ -122,6 +182,14 @@ nav ul li a:hover{
 
 nav ul li a:active{
 	background:rgb(26,120,81);
+}
+
+
+.espacio{
+	position: relative;
+	opacity: 0;
+	height: 150px;
+	background: white;
 }
 
 /*=============================================
@@ -135,7 +203,7 @@ SLIDESHOW
 	margin: auto;
 	width: 100%;
 	overflow: hidden;
-	margin-bottom: 50px;
+	margin-bottom: 150px;
 	margin-top: 50px;
 }
 

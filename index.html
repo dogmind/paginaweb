@@ -14,6 +14,9 @@
 	
 	<link rel="icon"  href="img/icono.png">
 
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 	<link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/estilo.css">
 
@@ -25,12 +28,12 @@
 	<div class="transbox"></div>
 </section>
 
-<div id="contenedor" class="contenedor">
+<div id="contenedor" class="container-fluid">
 <!--====================================
 	CABECERA
 =====================================-->
 	<header>
-		<div id="cabecera" class="fila">
+		<!-- <div id="cabecera" class="fila">
 
 			<figure id="logoCabeza" class="col-lg-1 col-md-2 col-sm-4 col-xs-0">
 				<center><img src="img/icono.png"></center>
@@ -49,26 +52,32 @@
 
 			<figure id="fotosCab" class="col-lg-2 col-md-0 col-sm-0 col-xs-0 "><img src="img/cab04.png"></figure>
 
-		</div>
+		</div> -->
+
+        <img src="img/header.jpg" class="banner">
+        <a href="#" class="logo">
+            <img src="img/logo.jpg">
+        </a>
+        <!--====================================
+            MENU
+        =====================================-->
+
+        <nav>
+            
+            <ul>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#">Tienda</a></li>
+                <li><a href="#">Info</a></li>
+
+            </ul>
+
+
+        </nav>
+
 	</header>
 	
-<!--====================================
-	MENU
-=====================================-->
-
-	<nav class="fila">
-		
-		<ul>
-			<li class="col-lg-3 col-md-3 col-sm-3 col-xs-12"><a href="#">Nosotros</a></li>
-			<li class="col-lg-3 col-md-3 col-sm-3 col-xs-12"><a href="#productos">Productos</a></li>
-			<li class="col-lg-3 col-md-3 col-sm-3 col-xs-12"><a href="#">Tienda</a></li>
-			<li class="col-lg-3 col-md-3 col-sm-3 col-xs-12"><a href="#">Info</a></li>
-
-		</ul>
-
-
-	</nav>
-
+    <section class="espacio"></section>
 
 <!--====================================
 	SLIDESHOW
@@ -166,6 +175,7 @@
 	<script src="js/principal.js"></script>
 	<script src="js/slide-dinamico.js"></script>
 	<script src="js/parallax.js"></script>
+    <script src="js/sticky-navbar.js"></script>
 
 </body>
 </html>

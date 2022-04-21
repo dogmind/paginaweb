@@ -4,9 +4,9 @@ PROPIEDADES
 
 var p = {
 	contenedor: document.querySelector("#contenedor"),
-	fotosCab: document.querySelectorAll("#cabecera #fotosCab img"),
-	logoCabeza: document.querySelector("#logoCabeza"),
-	logoLetras: document.querySelector("#logoLetras"),
+	// fotosCab: document.querySelectorAll("#cabecera #fotosCab img"),
+	// logoCabeza: document.querySelector("#logoCabeza"),
+	// logoLetras: document.querySelector("#logoLetras"),
 	botonesMenu: document.querySelectorAll("nav ul li a"),
 	botonMenu: null,
 	slideshow: document.querySelector("#slide")
@@ -25,12 +25,12 @@ var m = {
 			p.contenedor.style.opacity = 1;
 
 			//cargo logos
-			m.cargarLogos();
+			// m.cargarLogos();
 
 			//cargo fotos de la cabecera		
-			for(var i = 0; i < p.fotosCab.length; i++){
-				m.cargarFotosCab(p.fotosCab[i].style,i)
-			}
+			// for(var i = 0; i < p.fotosCab.length; i++){
+			// 	m.cargarFotosCab(p.fotosCab[i].style,i)
+			// }
 
 			//cargar menu
 			for(var i = 0; i < p.botonesMenu.length; i++){
@@ -43,30 +43,30 @@ var m = {
 
 	},
 
-	cargarLogos: function(){
-		//cargo los logos con efecto FADE
-		logoCabeza.style.opacity = 0;
-		logoLetras.style.opacity = 0;
+	// cargarLogos: function(){
+	// 	//cargo los logos con efecto FADE
+	// 	// logoCabeza.style.opacity = 0;
+	// 	// logoLetras.style.opacity = 0;
 
-		setTimeout(function(){
-			logoCabeza.style.transition = "3s opacity ease";
-			logoLetras.style.transition = "3s opacity ease";
-			logoCabeza.style.opacity = 1;
-			logoLetras.style.opacity = 1;
-		},20)
-	},
+	// 	setTimeout(function(){
+	// 		logoCabeza.style.transition = "3s opacity ease";
+	// 		logoLetras.style.transition = "3s opacity ease";
+	// 		logoCabeza.style.opacity = 1;
+	// 		logoLetras.style.opacity = 1;
+	// 	},20)
+	// },
 
-	cargarFotosCab: function(imgStyle, index){
+	// cargarFotosCab: function(imgStyle, index){
 		
-		//cargo fotos con efecto SLIDE desde la derecha
-		imgStyle.right = "-1000%";
+	// 	//cargo fotos con efecto SLIDE desde la derecha
+	// 	imgStyle.right = "-1000%";
 
-		setTimeout(function(){
-			imgStyle.transition	= (index+1)*.5 + "s right ease";
-			imgStyle.right = "0";				
-		},20);
+	// 	setTimeout(function(){
+	// 		imgStyle.transition	= (index+1)*.5 + "s right ease";
+	// 		imgStyle.right = "0";				
+	// 	},20);
 
-	},
+	// },
 
 	cargarBotonesMenu: function(btnStyle){
 
