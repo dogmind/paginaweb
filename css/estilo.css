@@ -145,7 +145,7 @@ header.scrolled nav{
 
 nav ul{
 	margin: 0;
-	padding: 30px 0;
+	padding: 15px 0;
 	display: flex;
 	transition: 1s;
 	opacity: 0;
@@ -190,6 +190,11 @@ nav ul li a:active{
 	opacity: 0;
 	height: 150px;
 	background: white;
+}
+
+nav button span{
+	color: white;
+	font-weight: bold;
 }
 
 /*=============================================
