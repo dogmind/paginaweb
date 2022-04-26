@@ -9,7 +9,7 @@ var p = {
 	// logoLetras: document.querySelector("#logoLetras"),
 	botonesMenu: document.querySelectorAll("nav ul li a"),
 	botonMenu: null,
-	slideshow: document.querySelector("#slide")
+	slideshow: document.querySelector(".slide")
 }
 
 /*=============================================
@@ -39,6 +39,7 @@ var m = {
 
 			//mostrar slideshow
 			m.cargarSlideshow(p.slideshow.style);
+			
 		
 
 	},

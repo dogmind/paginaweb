@@ -4,18 +4,16 @@ OBJETO CON LAS PROP DEL SLIDE
 
 var ps = {
 
-	paginacion: document.querySelectorAll("#paginacion li"),
+	paginacion: document.querySelectorAll("#paginacion button"),
 	item: 0,
-	cajaSlide: document.querySelector("#slide ul"),
+	cajaSlide: document.querySelector(".carousel-inner"),
 	animacionSlide: "slide",
-	imgSlide: document.querySelectorAll("#slide ul li"),
-	avanzar: document.querySelector("#slide #avanzar"),
-	retroceder: document.querySelector("#slide #retroceder"),
+	imgSlide: document.querySelectorAll(".carousel-item"),
+	avanzar: document.querySelector(".carousel-control-next"),
+	retroceder: document.querySelector(".carousel-control-prev"),
 	velocidadSlide: 3000, //3 segundos
 	formatearLoop: false
 }
-
-
 
 
 /*===============================
@@ -26,28 +24,33 @@ var ms = {
 
 	inicioSlide: function(){
 
-
 		for (var i = 0; i < ps.paginacion.length; i++) {
-			
-			ps.paginacion[i].addEventListener("click", ms.paginacionSlide)
-			ps.imgSlide[i].style.width = (100/ps.paginacion.length) +"%"
+			ps.paginacion[i].addEventListener("click", ms.paginacionSlide);
 		}
 
 		ps.avanzar.addEventListener("click", ms.avanzar)
 		ps.retroceder.addEventListener("click", ms.retroceder)
 		ms.intervalo()
-
-		ps.cajaSlide.style.width = (ps.paginacion.length*100) +"%"
-
 	},
 
 
 	paginacionSlide: function(item){
-
-		ps.item = item.target.parentNode.getAttribute("item");
-		
+		ps.item = item.target.getAttribute("data-bs-slide-to");						
 		ms.movimientoSlide(ps.item);
+	},
 
+	movimientoSlide: function(item){
+
+		ps.formatearLoop = true;
+
+		for (var i = 0; i < ps.paginacion.length; i++) {
+			ps.paginacion[i].style.opacity = 0.5;
+			ps.imgSlide[i].setAttribute("class", "carousel-item");
+		}
+		
+		ps.paginacion[item].style.opacity = 1;
+		ps.imgSlide[item].setAttribute("class", "carousel-item active");
+		ps.cajaSlide.style.transition = ".7s left ease-in-out";
 	},
 
 	avanzar:function(){
@@ -68,24 +71,7 @@ var ms = {
 		ms.movimientoSlide(ps.item);
 	},
 
-	movimientoSlide: function(item){
-
-		ps.formatearLoop = true;
-
-		ps.cajaSlide.style.left = item * -100+"%";
-
-		for (var i = 0; i < ps.paginacion.length; i++) {
-			
-			ps.paginacion[i].style.opacity = 0.5;
-		
-		}
-		ps.paginacion[item].style.opacity = 1;
-
-		ps.cajaSlide.style.transition = ".7s left ease-in-out";
-		
-
-	},
-
+	
 	intervalo: function(){
 
 		setInterval(function(){
@@ -97,7 +83,6 @@ var ms = {
 			}			
 		}, ps.velocidadSlide)
 	}	
-
 }
 
 ms.inicioSlide();

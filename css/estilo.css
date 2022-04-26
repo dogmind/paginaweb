@@ -232,48 +232,41 @@ SLIDESHOW
 	width: 100%;
 }
 
-#slide #paginacion{
+#paginacion{
 	position: absolute;
 	width: 100%;
 	margin: auto;
 	text-align: center;
 	bottom: 20px;
 	left: 0;
-	z-index: 1;
+	z-index: 5;
 }
 
-#slide #paginacion li{
+#paginacion button{
 	display: inline-block;
+	font-size: x-large;
 	margin: 0px 5px;
 	cursor: pointer;
 	opacity: .5;
 	color: white;
 	text-shadow: 0px 0px 5px #333;
+	border-style: hidden;
+	background-color: transparent;
 }
 
-#slide #paginacion li:first-child{
+#paginacion button:first-child{
 	opacity: 1;
 }
 
-#slide .flechas{
+.flechas{
 	position: absolute;
-	font-size: 2em; /*1 em equivale a 16px*/
+	font-size: xx-large; /*1 em equivale a 16px*/
 	color: white;
 	cursor: pointer;
 	z-index: 2;
 }
 
-#slide #retroceder{
-	top: 45%;
-	left: 2%;
-}
-
-#slide #avanzar{
-	top: 45%;
-	right: 2%;
-}
-
-#slide ul li .textoSlide{
+.textoSlide{
 	position: absolute;
 	width: 30%;
 	top: 40px;
@@ -283,18 +276,19 @@ SLIDESHOW
 	color: white;
 }
 
-#slide ul li .textoSlide h2{
+.textoSlide h2{
 	/*font-family: 'Courgette', cursive;*/
+	margin: auto;
 	font-family: 'Lemon', cursive;
 	background: rgba(0, 0, 0, .5);
 	padding: 5px 0;
 }
 
-#slide ul li .textoSlide h4{
+.textoSlide p{
 	/*font-family: 'Courgette', cursive;*/
 	font-family: 'Lemon', cursive;
 	background: rgba(0, 0, 0, .5);
-	padding-bottom: 10px;
+	/*padding-bottom: 10px;*/
 }
 
 /*=============================================
